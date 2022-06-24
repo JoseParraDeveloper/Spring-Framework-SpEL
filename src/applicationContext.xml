@@ -29,6 +29,10 @@
 	</bean>
 
 	<bean id="bookLibrary" class="com.joseparradev.model.BookLibrary">
+		<property name="nameLibrary"
+			value="#{T(com.joseparradev.model.InformationLibrary).NAME_LIBRARY}"></property>
+		<property name="description"
+			value="#{T(com.joseparradev.model.InformationLibrary).getInformationLibrary()}"></property>
 		<property name="allBooks" value="#{bookCollection.bookList}"></property>
 		<property name="firtsBookLibrary"
 			value="#{bookCollection.getFirstBook()}"></property>
