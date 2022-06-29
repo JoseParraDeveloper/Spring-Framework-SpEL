@@ -6,3 +6,4 @@ Using Spring Expression Languaje
 2. Refer to the properties and invoke methods defined in other beans.
 3. Refer to the static constants and invoke static methods.
 4. Perform Mathematical operations on values.
+5. Perform Relational and Logical Comparisons.
