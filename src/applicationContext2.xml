@@ -7,9 +7,13 @@
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd ">
 
 	<bean id="rectangle" class="com.joseparradev.model2.Rectangle">
-		<property name="length" value="5"></property>
+		<property name="length" value="6"></property>
 		<property name="breadth" value="10"></property>
+	</bean>
 
+	<bean id="rectangle1" class="com.joseparradev.model2.Rectangle">
+		<property name="length" value="2"></property>
+		<property name="breadth" value="1"></property>
 	</bean>
 
 	<bean id="rectangleCalculator"
@@ -18,10 +22,20 @@
 			value="#{2*(rectangle.length+rectangle.breadth)}"></property>
 		<property name="area"
 			value="#{rectangle.length*rectangle.breadth}"></property>
+		<property name="isBigRectangle"
+			value="#{rectangle.length > 5 and rectangle.breadth > 5}"></property>
 
 	</bean>
 
+	<bean id="rectangleCalculator1"
+		class="com.joseparradev.model2.RectangleCalculator">
+		<property name="perimeter"
+			value="#{2*(rectangle1.length+rectangle1.breadth)}"></property>
+		<property name="area"
+			value="#{rectangle1.length*rectangle1.breadth}"></property>
+		<property name="isBigRectangle"
+			value="#{rectangle1.length > 5 and rectangle1.breadth > 5}"></property>
 
-
+	</bean>
 
 </beans>
