@@ -7,3 +7,4 @@ Using Spring Expression Languaje
 3. Refer to the static constants and invoke static methods.
 4. Perform Mathematical operations on values.
 5. Perform Relational and Logical Comparisons.
+6. Perform Regular Expression Matching.
