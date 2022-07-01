@@ -6,7 +6,8 @@
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd ">
 
-
+	<context:property-placeholder
+		location="classpath:dataLibrary.properties" />
 
 	<bean id="book1" class="com.joseparradev.model.Book">
 		<property name="id" value="1"></property>
@@ -36,5 +37,12 @@
 		<property name="allBooks" value="#{bookCollection.bookList}"></property>
 		<property name="firtsBookLibrary"
 			value="#{bookCollection.getFirstBook()}"></property>
+		<property name="email" value="${email}"></property>
+	</bean>
+
+	<bean id="informationLibrary"
+		class="com.joseparradev.model.InformationLibrary">
+		<property name="isvalidEmail"
+			value="#{bookLibrary.email matches '[\w]+.[\w]+@[\w]+.com'}"></property>
 	</bean>
 </beans>

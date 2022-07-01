@@ -21,6 +21,7 @@ public class TestSpELMathematicalOperations {
 		System.out.println("Area: " + rectangleCalculator.getArea());
 		// Perform Relational and logical comparisons.
 		System.out.println("is it a big rectangle?: " + rectangleCalculator.getIsBigRectangle());
+		System.out.println("Message: " + rectangleCalculator.getMessage());
 
 		Rectangle rectangle1 = contexto.getBean("rectangle1", Rectangle.class);
 		System.out.println("--------------------------------Bean Rectangle One---------------------------------------");
@@ -33,6 +34,7 @@ public class TestSpELMathematicalOperations {
 		System.out.println("Area: " + rectangleCalculator1.getArea());
 		// Perform Relational and logical comparisons.
 		System.out.println("is it a big rectangle?: " + rectangleCalculator1.getIsBigRectangle());
+		System.out.println("Message: " + rectangleCalculator1.getMessage());
 
 		contexto.close();
 

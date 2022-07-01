@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.joseparradev.model.Book;
 import com.joseparradev.model.BookCollection;
 import com.joseparradev.model.BookLibrary;
+import com.joseparradev.model.InformationLibrary;
 
 public class TestSpEl {
 
@@ -43,12 +44,19 @@ public class TestSpEl {
 		BookLibrary bookLibrary = contexto.getBean("bookLibrary", BookLibrary.class);
 		System.out.println("Name Library: " + bookLibrary.getNameLibrary());
 		System.out.println(bookLibrary.getDescription());
+		System.out.println(bookLibrary.getEmail());
 		List<Book> myListBooksLibrary = bookCollection.getBookList();
 
 		for (Book book : myListBooksLibrary) {
 			System.out.println("Id= " + book.getId() + ", Name: " + book.getBookName());
 		}
 
+		System.out.println("--------------------------BEAN InformationLibrary-----------------------------------");
+		InformationLibrary informationLibrary = contexto.getBean("informationLibrary", InformationLibrary.class);
+		System.out.println(InformationLibrary.NAME_LIBRARY);
+		System.out.println(InformationLibrary.getInformationLibrary());
+		System.out.println("Is it a valid email?--> "
+				+ (Boolean.TRUE.equals(informationLibrary.isIsvalidEmail()) ? "it's valid" : "it's not valid"));
 		contexto.close();
 
 	}
