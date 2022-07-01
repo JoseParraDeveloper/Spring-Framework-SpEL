@@ -24,6 +24,8 @@
 			value="#{rectangle.length*rectangle.breadth}"></property>
 		<property name="isBigRectangle"
 			value="#{rectangle.length > 5 and rectangle.breadth > 5}"></property>
+		<property name="message"
+			value="#{rectangle.length > 5 and rectangle.breadth > 5?bigMessage:smallMessage}"></property>
 
 	</bean>
 
@@ -35,7 +37,22 @@
 			value="#{rectangle1.length*rectangle1.breadth}"></property>
 		<property name="isBigRectangle"
 			value="#{rectangle1.length > 5 and rectangle1.breadth > 5}"></property>
+		<property name="message"
+			value="#{rectangle1.length > 5 and rectangle1.breadth > 5?bigMessage:smallMessage}"></property>
+	</bean>
+
+	<bean id="bigMessage" class="java.lang.String">
+		<constructor-arg>
+			<value>It is a Big Rectangle</value>
+		</constructor-arg>
 
 	</bean>
+	<bean id="smallMessage" class="java.lang.String">
+		<constructor-arg>
+			<value>It is a Small Rectangle</value>
+		</constructor-arg>
+
+	</bean>
+
 
 </beans>

@@ -7,17 +7,29 @@ public class BookLibrary {
 	private String description;
 	private List<Book> allBooks;
 	private Book firtsBookLibrary;
+	private String email;
 
-	public BookLibrary(String nameLibrary, String description, List<Book> allBooks, Book firtsBookLibrary) {
+	public BookLibrary() {
+		super();
+
+	}
+
+	public BookLibrary(String nameLibrary, String description, List<Book> allBooks, Book firtsBookLibrary,
+			String email) {
 		super();
 		this.nameLibrary = nameLibrary;
 		this.description = description;
 		this.allBooks = allBooks;
 		this.firtsBookLibrary = firtsBookLibrary;
+		this.email = email;
 	}
 
-	public BookLibrary() {
-		super();
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getNameLibrary() {
