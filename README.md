@@ -8,3 +8,4 @@ Using Spring Expression Languaje
 4. Perform Mathematical operations on values.
 5. Perform Relational and Logical Comparisons.
 6. Perform Regular Expression Matching.
+7. Accessing Collections.
