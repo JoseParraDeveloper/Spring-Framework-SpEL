@@ -4,14 +4,24 @@ public class InformationLibrary {
 
 	public static final String NAME_LIBRARY = "Learning Spring";
 	private boolean isvalidEmail;
+	private String telephoneDirector;
 
 	public InformationLibrary() {
 		super();
 	}
 
-	public InformationLibrary(boolean isvalidEmail) {
+	public InformationLibrary(boolean isvalidEmail, String telephoneDirector) {
 		super();
 		this.isvalidEmail = isvalidEmail;
+		this.telephoneDirector = telephoneDirector;
+	}
+
+	public String getTelephoneDirector() {
+		return telephoneDirector;
+	}
+
+	public void setTelephoneDirector(String telephoneDirector) {
+		this.telephoneDirector = telephoneDirector;
 	}
 
 	public boolean isIsvalidEmail() {

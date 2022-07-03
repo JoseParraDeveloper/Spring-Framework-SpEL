@@ -19,12 +19,42 @@
 		<property name="bookName" value="Spring Boot"></property>
 	</bean>
 
+	<bean id="book3" class="com.joseparradev.model.Book">
+		<property name="id" value="3"></property>
+		<property name="bookName" value="Spring Boot-3"></property>
+	</bean>
+
+	<bean id="book4" class="com.joseparradev.model.Book">
+		<property name="id" value="4"></property>
+		<property name="bookName" value="Spring Boot-4"></property>
+	</bean>
+
+	<bean id="book5" class="com.joseparradev.model.Book">
+		<property name="id" value="5"></property>
+		<property name="bookName" value="Spring Boot-5"></property>
+	</bean>
+
+	<bean id="book6" class="com.joseparradev.model.Book">
+		<property name="id" value="6"></property>
+		<property name="bookName" value="Spring Boot-6"></property>
+	</bean>
+
+	<bean id="book7" class="com.joseparradev.model.Book">
+		<property name="id" value="7"></property>
+		<property name="bookName" value="Spring Boot-7"></property>
+	</bean>
+
 	<bean id="bookCollection"
 		class="com.joseparradev.model.BookCollection">
 		<property name="bookList">
 			<list>
 				<ref bean="book1" />
 				<ref bean="book2" />
+				<ref bean="book3" />
+				<ref bean="book4" />
+				<ref bean="book5" />
+				<ref bean="book6" />
+				<ref bean="book7" />
 			</list>
 		</property>
 	</bean>
@@ -38,11 +68,42 @@
 		<property name="firtsBookLibrary"
 			value="#{bookCollection.getFirstBook()}"></property>
 		<property name="email" value="${email}"></property>
+		<property name="sixBookInList" value="#{bookList[5]}"></property>
+		<property name="firstFourBook" value="#{bookList.?[id le 4]}"></property>
+		<property name="nameBooks" value="#{bookList.![bookName]}"></property>
 	</bean>
 
 	<bean id="informationLibrary"
 		class="com.joseparradev.model.InformationLibrary">
 		<property name="isvalidEmail"
-			value="#{bookLibrary.email matches '[\w]+.[\w]+@[\w]+.com'}"></property>
+			value="#{bookLibrary.email matches '^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$'}"></property>
+		<property name="telephoneDirector"
+			value="#{telephoneMap[parra]}"></property>
+	</bean>
+
+	<bean id="bookList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="book1" />
+				<ref bean="book2" />
+				<ref bean="book3" />
+				<ref bean="book4" />
+				<ref bean="book5" />
+				<ref bean="book6" />
+				<ref bean="book7" />
+			</list>
+
+		</constructor-arg>
+	</bean>
+
+	<bean id="telephoneMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="jose" value="99999999">
+				</entry>
+				<entry key="parra" value="00000000">
+				</entry>
+			</map>
+		</constructor-arg>
 	</bean>
 </beans>
